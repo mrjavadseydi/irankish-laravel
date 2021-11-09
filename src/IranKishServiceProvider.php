@@ -14,7 +14,7 @@ class IranKishServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/src/config/IranKish.php', 'IranKish');
+        $this->mergeConfigFrom(__DIR__.'/config/IranKish.php', 'IranKish');
     }
 
     /**
@@ -27,7 +27,7 @@ class IranKishServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-                __DIR__.'/src/config/IranKish.php' => config_path('IranKish.php'),
+                __DIR__.'/config/IranKish.php' => config_path('IranKish.php'),
             ], 'config');
 
         }
