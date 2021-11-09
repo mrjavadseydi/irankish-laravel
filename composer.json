@@ -8,5 +8,20 @@
             "email": "seydi.birjand@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MJSeydi\\iranKish\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MJSeydi\\iranKish\\IranKishServiceProvider"
+            ],
+            "aliases": {
+                "Calculator": "MJSeydi\\iranKish\\Facades\\IranKish"
+            }
+        }
+    }
 }
