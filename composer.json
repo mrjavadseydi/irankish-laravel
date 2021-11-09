@@ -1,0 +1,12 @@
+{
+    "name": "javad/ir-kish",
+    "description": "a package for using iran kish  gateway",
+    "type": "payment",
+    "authors": [
+        {
+            "name": "mrJavad",
+            "email": "seydi.birjand@gmail.com"
+        }
+    ],
+    "require": {}
+}
