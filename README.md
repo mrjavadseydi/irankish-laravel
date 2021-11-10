@@ -23,7 +23,7 @@ php artisan vendor:publish --provider=MJSeydi\iranKish\IranKishServiceProvider
 ```php
 use MJSeydi\iranKish\Facades\IranKish;
 
-# for getting the token from irankish 
+# getting the token from irankish 
 # you must save $orderId in your database for verify the payment
 $response = IranKish::getIranKishToken($Amount,$orderId);
 if ($response["responseCode"] != "00") {
