@@ -3,7 +3,7 @@
 namespace MJSeydi\iranKish;
 
 use Illuminate\Support\ServiceProvider;
-
+use \MJSeydi\iranKish\Facades\IranKish;
 class IranKishServiceProvider extends ServiceProvider
 {
 
@@ -15,6 +15,9 @@ class IranKishServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/config/IranKish.php', 'IranKish');
+        $this->app->bind('IranKish', function($app) {
+            return new IranKish();
+        });
     }
 
     /**
