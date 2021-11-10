@@ -46,7 +46,7 @@ use MJSeydi\iranKish\Facades\IranKish;
 
 # all parameter will send to you by POST method 
 $response = IranKish::verifyPayment($request->verifySaleReferenceId,
- $request->systemTraceAuditNumber, $request->token);
+$request->systemTraceAuditNumber, $request->token);
 #your order id is on the $request->orderId
 if ($response["responseCode"] != 0 && $response["responseCode"] != "00") {
      # you have error!
