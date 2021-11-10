@@ -3,7 +3,7 @@
 namespace MJSeydi\iranKish;
 
 use Illuminate\Support\ServiceProvider;
-use \MJSeydi\iranKish\Facades\IranKish;
+use \MJSeydi\iranKish\IranKish;
 class IranKishServiceProvider extends ServiceProvider
 {
 
