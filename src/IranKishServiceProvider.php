@@ -3,36 +3,29 @@
 namespace MJSeydi\iranKish;
 
 use Illuminate\Support\ServiceProvider;
-use \MJSeydi\iranKish\IranKish;
+
 class IranKishServiceProvider extends ServiceProvider
 {
-
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/config/IranKish.php', 'IranKish');
-        $this->app->bind('IranKish', function($app) {
-            return new IranKish();
-        });
+
+        $this->app->singleton(IranKish::class, fn () => new IranKish());
+        $this->app->alias(IranKish::class, 'IranKish');
     }
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
                 __DIR__.'/config/IranKish.php' => config_path('IranKish.php'),
-            ], 'config');
-
+            ], ['irankish-config', 'config']);
         }
     }
 }
