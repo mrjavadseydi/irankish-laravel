@@ -2,7 +2,7 @@
 
 ## 1.0.0 - 2026-09-24
 
-- Support Laravel 10, 11, 12 and 13 (PHP 8.1+).
+- Support Laravel 12 and 13 (PHP 8.2+).
 - HTTP calls use Laravel's HTTP client (fakeable with `Http::fake()`), with a configurable timeout and base url.
 - New `requestToken()`, `redirect()` / `redirectForm()` / `paymentUrl()`, `verify()`, `verifyCallback()`, `callback()`,
   `reverse()` and `inquiryBy*()` methods that throw `IranKishException` with the gateway response code.

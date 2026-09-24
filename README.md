@@ -6,8 +6,8 @@ A Laravel package for the Iran Kish (IKC) IPG v3 payment gateway.
 
 ## Requirements
 
-- PHP 8.1 or newer, with the `openssl` and `json` extensions
-- Laravel 10, 11, 12 or 13
+- PHP 8.2 or newer, with the `openssl` and `json` extensions
+- Laravel 12 or 13
 
 ## Installation
 
@@ -153,7 +153,7 @@ $gateway = new IranKish([
 
 ## Upgrading from the untagged `dev-master` version
 
-- Requires PHP 8.1+ and Laravel 10 or newer. HTTP calls now go through Laravel's HTTP client, so they can be faked with `Http::fake()` in your tests.
+- Requires PHP 8.2+ and Laravel 12 or 13. HTTP calls now go through Laravel's HTTP client, so they can be faked with `Http::fake()` in your tests.
 - `getIranKishToken()` and `verifyPayment()` still exist and return the raw gateway response, but are deprecated in favour of `requestToken()` and `verifyCallback()` / `verify()`.
   They now throw `IranKishException` when the gateway can't be reached or the public key is invalid.
 - The facade alias is now `IranKish` (it was mistakenly registered as `Calculator`).
