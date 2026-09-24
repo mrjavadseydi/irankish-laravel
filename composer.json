@@ -1,18 +1,40 @@
 {
     "name": "javad/ir-kish",
-    "description": "a package for using iran kish  gateway",
-    "type": "payment",
+    "description": "Laravel package for the Iran Kish (IKC) IPG v3 payment gateway",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "payment", "gateway", "irankish", "iran-kish", "ikc", "shaparak", "ipg"],
+    "homepage": "https://github.com/mrjavadseydi/irankish-laravel",
     "authors": [
         {
             "name": "mrJavad",
             "email": "seydi.birjand@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^7.5",
+        "illuminate/http": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.5|^11.0|^12.0"
+    },
     "autoload": {
         "psr-4": {
             "MJSeydi\\iranKish\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MJSeydi\\iranKish\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
     },
     "extra": {
         "laravel": {
@@ -20,8 +42,13 @@
                 "MJSeydi\\iranKish\\IranKishServiceProvider"
             ],
             "aliases": {
-                "Calculator": "MJSeydi\\iranKish\\Facades\\IranKish"
+                "IranKish": "MJSeydi\\iranKish\\Facades\\IranKish"
             }
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
